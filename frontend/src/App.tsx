@@ -4,6 +4,7 @@ import Footer from "./components/layout/Footer";
 import HeroSection from "./components/sections/HeroSection";
 import FeaturesSection from "./components/sections/FeaturesSection";
 import StatsBar from "./components/sections/StatsBar";
+import ProblemSection from "./components/sections/ProblemSection";
 import DashboardPreviewSection from "./components/sections/DashboardPreviewSection";
 import KeyQuestionsSection from "./components/sections/KeyQuestionsSection";
 import DataSourcesSection from "./components/sections/DataSourcesSection";
@@ -17,6 +18,7 @@ const App = () => {
         <HeroSection />
         <FeaturesSection />
         <StatsBar />
+        <ProblemSection />
         <DashboardPreviewSection />
         <KeyQuestionsSection />
         <DataSourcesSection />

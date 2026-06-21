@@ -69,11 +69,40 @@ export const es: Locale = {
     ],
   },
   stats: [
-    { value: "120K+", label: "POIs monitorizados" },
-    { value: "20", label: "Destinos analizados" },
+    { value: "96.8M", label: "Llegadas internacionales (España, 2023)" },
+    { value: "14", label: "Destinos analizados" },
     { value: "15+", label: "Fuentes de datos integradas" },
-    { value: "Diaria", label: "Actualización" },
+    { value: "134.7Bn€", label: "Ingresos turísticos monitorizados" },
   ],
+  problema: {
+    badge: "El Problema",
+    heading: "Los datos existen. El problema es conectarlos.",
+    subtitle:
+      "Los gestores de destino se enfrentan a tres barreras estructurales que impiden tomar decisiones basadas en datos.",
+    challenges: [
+      {
+        stat: "96.8M",
+        statLabel: "llegadas / año",
+        title: "Estacionalidad Extrema",
+        desc: "España recibe 96.8M de turistas internacionales al año, pero más del 60% llega en solo 3 meses. La infraestructura se dimensiona para los picos y queda ociosa el resto del año.",
+        color: "#F59E0B",
+      },
+      {
+        stat: "85% → 10%",
+        statLabel: "turistas vs destinos",
+        title: "Concentración Espacial",
+        desc: "El 85% de los turistas visita solo el 10% de los destinos. Miles de municipios con potencial turístico real apenas aparecen en ninguna oferta comercial.",
+        color: "#EF4444",
+      },
+      {
+        stat: "134.7Bn€",
+        statLabel: "ingresos turísticos anuales",
+        title: "Distribución Desigual",
+        desc: "España genera 134.7Bn€ en ingresos turísticos, pero la distribución territorial es profundamente desigual — e invisible sin una visión geoespacial unificada.",
+        color: "#10B981",
+      },
+    ],
+  },
   dashboardPreview: {
     badge: "Dashboard Inteligente",
     heading: "Dashboard Inteligente",
@@ -173,27 +202,27 @@ export const es: Locale = {
   },
   howItWorks: {
     badge: "Cómo Funciona",
-    heading: "Cómo funciona",
+    heading: "De los datos brutos a las decisiones estratégicas",
     steps: [
       {
         num: "01",
-        title: "Conectamos datos",
-        desc: "Integramos múltiples fuentes de datos abiertos y privadas.",
+        title: "Extracción de datos",
+        desc: "POIs de OpenStreetMap + datasets abiertos para 14 destinos españoles, ingestados via pipeline ETL automatizado.",
       },
       {
         num: "02",
-        title: "Analizamos con IA",
-        desc: "Modelos de IA detectan patrones, oportunidades y riesgos.",
+        title: "Transformación y enriquecimiento",
+        desc: "Limpieza, normalización y derivación de KPIs — índice de congestión, scores de sentimiento, flags de crecimiento.",
       },
       {
         num: "03",
-        title: "Visualizamos insights",
-        desc: "Dashboards interactivos para exploración y seguimiento.",
+        title: "Dashboard interactivo",
+        desc: "Mapas Power BI con filtros por zona, temporada, congestión, sentimiento, accesibilidad y mercado emisor.",
       },
       {
         num: "04",
         title: "Decisiones con impacto",
-        desc: "Planificación estratégica basada en datos confiables.",
+        desc: "Oportunidades detectadas por IA y alertas de saturación convierten los datos en estrategia de destino accionable.",
       },
     ],
     ctaTitle: "Convierte tu destino en un destino inteligente.",

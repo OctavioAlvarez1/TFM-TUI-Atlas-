@@ -1,0 +1,15 @@
+destination,region,destination_type,capacity_index,status,lat_center,lon_center,bbox_south,bbox_west,bbox_north,bbox_east
+Barcelona,Cataluña,urban,92,saturado,41.395,2.145,41.32,2.06,41.47,2.23
+Madrid,Madrid,urban,78,en crecimiento,40.445,-3.7,40.33,-3.83,40.56,-3.57
+Mallorca,Islas Baleares,island,88,saturado,39.61,2.89,39.25,2.3,39.97,3.48
+Tenerife,Islas Canarias,island,82,saturado,28.285,-16.515,27.97,-16.93,28.6,-16.1
+Sevilla,Andalucía,urban,71,en crecimiento,37.375,-5.965,37.31,-6.05,37.44,-5.88
+Valencia,Comunidad Valenciana,urban,65,en crecimiento,39.47,-0.375,39.42,-0.44,39.52,-0.31
+Costa Brava,Cataluña,coastal,85,saturado,42.035,3.05,41.65,2.78,42.42,3.32
+Costa del Sol,Andalucía,coastal,80,saturado,36.59,-4.775,36.43,-5.2,36.75,-4.35
+Granada,Andalucía,cultural,74,en crecimiento,37.18,-3.605,37.14,-3.64,37.22,-3.57
+San Sebastián,País Vasco,urban,69,en crecimiento,43.31,-1.98,43.28,-2.03,43.34,-1.93
+Ronda,Andalucía,rural,42,infrautilizado,36.74,-5.165,36.72,-5.18,36.76,-5.15
+Extremadura,Extremadura,rural,28,infrautilizado,39.425,-5.86,38.7,-7.05,40.15,-4.67
+Picos de Europa,Asturias/Cantabria,rural,35,infrautilizado,43.185,-4.735,43.07,-5.03,43.3,-4.44
+Teruel,Aragón,rural,22,infrautilizado,40.345,-1.165,40.27,-1.25,40.42,-1.08

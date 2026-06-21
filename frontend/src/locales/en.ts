@@ -67,11 +67,40 @@ export const en = {
     ],
   },
   stats: [
-    { value: "120K+", label: "POIs monitored" },
-    { value: "20", label: "Destinations analyzed" },
+    { value: "96.8M", label: "International arrivals (Spain, 2023)" },
+    { value: "14", label: "Destinations analyzed" },
     { value: "15+", label: "Integrated data sources" },
-    { value: "Daily", label: "Data updates" },
+    { value: "134.7Bn€", label: "Tourism revenue monitored" },
   ],
+  problema: {
+    badge: "The Challenge",
+    heading: "Tourism data exists. Connecting it is the problem.",
+    subtitle:
+      "Destination managers face three structural barriers that prevent data-driven decisions.",
+    challenges: [
+      {
+        stat: "96.8M",
+        statLabel: "arrivals / year",
+        title: "Extreme Seasonality",
+        desc: "Spain receives 96.8M international tourists a year, but over 60% arrive in just 3 months. Destination infrastructure is sized for peaks and idle the rest of the year.",
+        color: "#F59E0B",
+      },
+      {
+        stat: "85% → 10%",
+        statLabel: "tourists vs destinations",
+        title: "Spatial Concentration",
+        desc: "85% of tourists visit only 10% of destinations. Thousands of municipalities with genuine tourism potential barely appear in any commercial offering.",
+        color: "#EF4444",
+      },
+      {
+        stat: "134.7Bn€",
+        statLabel: "annual tourism revenue",
+        title: "Unequal Distribution",
+        desc: "Spain generates 134.7Bn€ in tourism revenue, but the territorial distribution is deeply unequal — and invisible without a unified geospatial view.",
+        color: "#10B981",
+      },
+    ],
+  },
   dashboardPreview: {
     badge: "Smart Dashboard",
     heading: "Intelligent Dashboard",
@@ -171,34 +200,34 @@ export const en = {
   },
   howItWorks: {
     badge: "How It Works",
-    heading: "Cómo funciona",
+    heading: "From raw data to strategic decisions",
     steps: [
       {
         num: "01",
-        title: "Conectamos datos",
-        desc: "Integramos múltiples fuentes de datos abiertos y privadas.",
+        title: "Data Extraction",
+        desc: "OpenStreetMap POIs + open datasets for 14 Spanish destinations, ingested via automated ETL pipeline.",
       },
       {
         num: "02",
-        title: "Analizamos con IA",
-        desc: "Modelos de IA detectan patrones, oportunidades y riesgos.",
+        title: "Transform & Enrich",
+        desc: "Cleaning, normalisation and KPI derivation — congestion index, sentiment scores, growth flags.",
       },
       {
         num: "03",
-        title: "Visualizamos insights",
-        desc: "Dashboards interactivos para exploración y seguimiento.",
+        title: "Interactive Dashboard",
+        desc: "Power BI maps with filters by zone, season, congestion, sentiment, accessibility and market origin.",
       },
       {
         num: "04",
-        title: "Decisiones con impacto",
-        desc: "Planificación estratégica basada en datos confiables.",
+        title: "Strategic Decisions",
+        desc: "AI-detected opportunities and saturation alerts turn data into actionable destination strategy.",
       },
     ],
-    ctaTitle: "Convierte tu destino en un destino inteligente.",
+    ctaTitle: "Turn your destination into a smart destination.",
     ctaSubtitle:
-      "Accede a dashboards avanzados, insights con IA y análisis geoespacial de todo el territorio español.",
-    ctaPrimary: "Solicitar demo →",
-    ctaSecondary: "Ver caso de éxito →",
+      "Access advanced dashboards, AI insights and geospatial analysis across the entire Spanish territory.",
+    ctaPrimary: "Request a demo →",
+    ctaSecondary: "View case study →",
   },
   footer: {
     tagline: "Geospatial Tourism Analytics",

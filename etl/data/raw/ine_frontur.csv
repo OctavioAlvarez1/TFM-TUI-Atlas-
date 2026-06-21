@@ -1,0 +1,337 @@
+destination,year,month,intl_visitors_real
+Sevilla,2024,1,353345
+Sevilla,2024,2,353345
+Sevilla,2024,3,706690
+Sevilla,2024,4,706690
+Sevilla,2024,5,706690
+Sevilla,2024,6,1236708
+Sevilla,2024,7,1766726
+Sevilla,2024,8,1766726
+Sevilla,2024,9,1236708
+Sevilla,2024,10,706690
+Sevilla,2024,11,353345
+Sevilla,2024,12,353345
+Sevilla,2023,1,332310
+Sevilla,2023,2,332310
+Sevilla,2023,3,664620
+Sevilla,2023,4,664620
+Sevilla,2023,5,664620
+Sevilla,2023,6,1163086
+Sevilla,2023,7,1661552
+Sevilla,2023,8,1661552
+Sevilla,2023,9,1163086
+Sevilla,2023,10,664620
+Sevilla,2023,11,332310
+Sevilla,2023,12,332310
+Costa del Sol,2024,1,398135
+Costa del Sol,2024,2,398135
+Costa del Sol,2024,3,796271
+Costa del Sol,2024,4,796271
+Costa del Sol,2024,5,796271
+Costa del Sol,2024,6,1393474
+Costa del Sol,2024,7,1990677
+Costa del Sol,2024,8,1990677
+Costa del Sol,2024,9,1393474
+Costa del Sol,2024,10,796271
+Costa del Sol,2024,11,398135
+Costa del Sol,2024,12,398135
+Costa del Sol,2023,1,374434
+Costa del Sol,2023,2,374434
+Costa del Sol,2023,3,748868
+Costa del Sol,2023,4,748868
+Costa del Sol,2023,5,748868
+Costa del Sol,2023,6,1310519
+Costa del Sol,2023,7,1872171
+Costa del Sol,2023,8,1872171
+Costa del Sol,2023,9,1310519
+Costa del Sol,2023,10,748868
+Costa del Sol,2023,11,374434
+Costa del Sol,2023,12,374434
+Granada,2024,1,368275
+Granada,2024,2,368275
+Granada,2024,3,736550
+Granada,2024,4,736550
+Granada,2024,5,736550
+Granada,2024,6,1288963
+Granada,2024,7,1841376
+Granada,2024,8,1841376
+Granada,2024,9,1288963
+Granada,2024,10,736550
+Granada,2024,11,368275
+Granada,2024,12,368275
+Granada,2023,1,346351
+Granada,2023,2,346351
+Granada,2023,3,692703
+Granada,2023,4,692703
+Granada,2023,5,692703
+Granada,2023,6,1212230
+Granada,2023,7,1731758
+Granada,2023,8,1731758
+Granada,2023,9,1212230
+Granada,2023,10,692703
+Granada,2023,11,346351
+Granada,2023,12,346351
+Ronda,2024,1,209021
+Ronda,2024,2,209021
+Ronda,2024,3,418042
+Ronda,2024,4,418042
+Ronda,2024,5,418042
+Ronda,2024,6,731573
+Ronda,2024,7,1045105
+Ronda,2024,8,1045105
+Ronda,2024,9,731573
+Ronda,2024,10,418042
+Ronda,2024,11,209021
+Ronda,2024,12,209021
+Ronda,2023,1,196577
+Ronda,2023,2,196577
+Ronda,2023,3,393155
+Ronda,2023,4,393155
+Ronda,2023,5,393155
+Ronda,2023,6,688022
+Ronda,2023,7,982889
+Ronda,2023,8,982889
+Ronda,2023,9,688022
+Ronda,2023,10,393155
+Ronda,2023,11,196577
+Ronda,2023,12,196577
+Teruel,2024,1,5197
+Teruel,2024,2,5197
+Teruel,2024,3,10394
+Teruel,2024,4,10394
+Teruel,2024,5,10394
+Teruel,2024,6,18190
+Teruel,2024,7,25986
+Teruel,2024,8,25986
+Teruel,2024,9,18190
+Teruel,2024,10,10394
+Teruel,2024,11,5197
+Teruel,2024,12,5197
+Teruel,2023,1,3799
+Teruel,2023,2,3799
+Teruel,2023,3,7598
+Teruel,2023,4,7598
+Teruel,2023,5,7598
+Teruel,2023,6,13296
+Teruel,2023,7,18995
+Teruel,2023,8,18995
+Teruel,2023,9,13296
+Teruel,2023,10,7598
+Teruel,2023,11,3799
+Teruel,2023,12,3799
+Picos de Europa,2024,1,4479
+Picos de Europa,2024,2,4479
+Picos de Europa,2024,3,8959
+Picos de Europa,2024,4,8959
+Picos de Europa,2024,5,8959
+Picos de Europa,2024,6,15678
+Picos de Europa,2024,7,22397
+Picos de Europa,2024,8,22397
+Picos de Europa,2024,9,15678
+Picos de Europa,2024,10,8959
+Picos de Europa,2024,11,4479
+Picos de Europa,2024,12,4479
+Picos de Europa,2023,1,4004
+Picos de Europa,2023,2,4004
+Picos de Europa,2023,3,8009
+Picos de Europa,2023,4,8009
+Picos de Europa,2023,5,8009
+Picos de Europa,2023,6,14016
+Picos de Europa,2023,7,20023
+Picos de Europa,2023,8,20023
+Picos de Europa,2023,9,14016
+Picos de Europa,2023,10,8009
+Picos de Europa,2023,11,4004
+Picos de Europa,2023,12,4004
+Mallorca,2024,1,476958
+Mallorca,2024,2,476958
+Mallorca,2024,3,953917
+Mallorca,2024,4,953917
+Mallorca,2024,5,953917
+Mallorca,2024,6,1669356
+Mallorca,2024,7,2384794
+Mallorca,2024,8,2384794
+Mallorca,2024,9,1669356
+Mallorca,2024,10,953917
+Mallorca,2024,11,476958
+Mallorca,2024,12,476958
+Mallorca,2023,1,464467
+Mallorca,2023,2,464467
+Mallorca,2023,3,928934
+Mallorca,2023,4,928934
+Mallorca,2023,5,928934
+Mallorca,2023,6,1625636
+Mallorca,2023,7,2322337
+Mallorca,2023,8,2322337
+Mallorca,2023,9,1625636
+Mallorca,2023,10,928934
+Mallorca,2023,11,464467
+Mallorca,2023,12,464467
+Tenerife,2024,1,443751
+Tenerife,2024,2,443751
+Tenerife,2024,3,887502
+Tenerife,2024,4,887502
+Tenerife,2024,5,887502
+Tenerife,2024,6,1553129
+Tenerife,2024,7,2218756
+Tenerife,2024,8,2218756
+Tenerife,2024,9,1553129
+Tenerife,2024,10,887502
+Tenerife,2024,11,443751
+Tenerife,2024,12,443751
+Tenerife,2023,1,430580
+Tenerife,2023,2,430580
+Tenerife,2023,3,861160
+Tenerife,2023,4,861160
+Tenerife,2023,5,861160
+Tenerife,2023,6,1507031
+Tenerife,2023,7,2152901
+Tenerife,2023,8,2152901
+Tenerife,2023,9,1507031
+Tenerife,2023,10,861160
+Tenerife,2023,11,430580
+Tenerife,2023,12,430580
+Barcelona,2024,1,635812
+Barcelona,2024,2,635812
+Barcelona,2024,3,1271625
+Barcelona,2024,4,1271625
+Barcelona,2024,5,1271625
+Barcelona,2024,6,2225343
+Barcelona,2024,7,3179062
+Barcelona,2024,8,3179062
+Barcelona,2024,9,2225343
+Barcelona,2024,10,1271625
+Barcelona,2024,11,635812
+Barcelona,2024,12,635812
+Barcelona,2023,1,632586
+Barcelona,2023,2,632586
+Barcelona,2023,3,1265172
+Barcelona,2023,4,1265172
+Barcelona,2023,5,1265172
+Barcelona,2023,6,2214051
+Barcelona,2023,7,3162931
+Barcelona,2023,8,3162931
+Barcelona,2023,9,2214051
+Barcelona,2023,10,1265172
+Barcelona,2023,11,632586
+Barcelona,2023,12,632586
+Costa Brava,2024,1,587435
+Costa Brava,2024,2,587435
+Costa Brava,2024,3,1174870
+Costa Brava,2024,4,1174870
+Costa Brava,2024,5,1174870
+Costa Brava,2024,6,2056024
+Costa Brava,2024,7,2937177
+Costa Brava,2024,8,2937177
+Costa Brava,2024,9,2056024
+Costa Brava,2024,10,1174870
+Costa Brava,2024,11,587435
+Costa Brava,2024,12,587435
+Costa Brava,2023,1,584454
+Costa Brava,2023,2,584454
+Costa Brava,2023,3,1168909
+Costa Brava,2023,4,1168909
+Costa Brava,2023,5,1168909
+Costa Brava,2023,6,2045591
+Costa Brava,2023,7,2922273
+Costa Brava,2023,8,2922273
+Costa Brava,2023,9,2045591
+Costa Brava,2023,10,1168909
+Costa Brava,2023,11,584454
+Costa Brava,2023,12,584454
+Valencia,2024,1,278243
+Valencia,2024,2,278243
+Valencia,2024,3,556487
+Valencia,2024,4,556487
+Valencia,2024,5,556487
+Valencia,2024,6,973853
+Valencia,2024,7,1391218
+Valencia,2024,8,1391218
+Valencia,2024,9,973853
+Valencia,2024,10,556487
+Valencia,2024,11,278243
+Valencia,2024,12,278243
+Valencia,2023,1,267059
+Valencia,2023,2,267059
+Valencia,2023,3,534119
+Valencia,2023,4,534119
+Valencia,2023,5,534119
+Valencia,2023,6,934708
+Valencia,2023,7,1335298
+Valencia,2023,8,1335298
+Valencia,2023,9,934708
+Valencia,2023,10,534119
+Valencia,2023,11,267059
+Valencia,2023,12,267059
+Extremadura,2024,1,1944
+Extremadura,2024,2,1944
+Extremadura,2024,3,3888
+Extremadura,2024,4,3888
+Extremadura,2024,5,3888
+Extremadura,2024,6,6804
+Extremadura,2024,7,9720
+Extremadura,2024,8,9720
+Extremadura,2024,9,6804
+Extremadura,2024,10,3888
+Extremadura,2024,11,1944
+Extremadura,2024,12,1944
+Extremadura,2023,1,2319
+Extremadura,2023,2,2319
+Extremadura,2023,3,4638
+Extremadura,2023,4,4638
+Extremadura,2023,5,4638
+Extremadura,2023,6,8117
+Extremadura,2023,7,11596
+Extremadura,2023,8,11596
+Extremadura,2023,9,8117
+Extremadura,2023,10,4638
+Extremadura,2023,11,2319
+Extremadura,2023,12,2319
+Madrid,2024,1,245471
+Madrid,2024,2,245471
+Madrid,2024,3,490942
+Madrid,2024,4,490942
+Madrid,2024,5,490942
+Madrid,2024,6,859149
+Madrid,2024,7,1227356
+Madrid,2024,8,1227356
+Madrid,2024,9,859149
+Madrid,2024,10,490942
+Madrid,2024,11,245471
+Madrid,2024,12,245471
+Madrid,2023,1,237356
+Madrid,2023,2,237356
+Madrid,2023,3,474713
+Madrid,2023,4,474713
+Madrid,2023,5,474713
+Madrid,2023,6,830748
+Madrid,2023,7,1186783
+Madrid,2023,8,1186783
+Madrid,2023,9,830748
+Madrid,2023,10,474713
+Madrid,2023,11,237356
+Madrid,2023,12,237356
+San Sebastián,2024,1,50629
+San Sebastián,2024,2,50629
+San Sebastián,2024,3,101259
+San Sebastián,2024,4,101259
+San Sebastián,2024,5,101259
+San Sebastián,2024,6,177203
+San Sebastián,2024,7,253147
+San Sebastián,2024,8,253147
+San Sebastián,2024,9,177203
+San Sebastián,2024,10,101259
+San Sebastián,2024,11,50629
+San Sebastián,2024,12,50629
+San Sebastián,2023,1,51125
+San Sebastián,2023,2,51125
+San Sebastián,2023,3,102250
+San Sebastián,2023,4,102250
+San Sebastián,2023,5,102250
+San Sebastián,2023,6,178937
+San Sebastián,2023,7,255625
+San Sebastián,2023,8,255625
+San Sebastián,2023,9,178937
+San Sebastián,2023,10,102250
+San Sebastián,2023,11,51125
+San Sebastián,2023,12,51125

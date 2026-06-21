@@ -1,0 +1,145 @@
+destination,month,congestion_index_real
+Barcelona,1,50.6
+Barcelona,2,54.3
+Barcelona,3,60.7
+Barcelona,4,68.1
+Barcelona,5,75.4
+Barcelona,6,77.3
+Barcelona,7,81.0
+Barcelona,8,81.0
+Barcelona,9,72.7
+Barcelona,10,77.3
+Barcelona,11,58.9
+Barcelona,12,54.3
+Madrid,1,42.9
+Madrid,2,44.5
+Madrid,3,54.6
+Madrid,4,60.8
+Madrid,5,66.3
+Madrid,6,64.7
+Madrid,7,63.2
+Madrid,8,49.9
+Madrid,9,60.8
+Madrid,10,68.6
+Madrid,11,60.8
+Madrid,12,58.5
+Mallorca,1,10.6
+Mallorca,2,14.1
+Mallorca,3,22.0
+Mallorca,4,41.4
+Mallorca,5,78.3
+Mallorca,6,86.2
+Mallorca,7,88.0
+Mallorca,8,88.0
+Mallorca,9,83.6
+Mallorca,10,61.6
+Mallorca,11,13.2
+Mallorca,12,11.4
+Tenerife,1,56.6
+Tenerife,2,57.4
+Tenerife,3,66.4
+Tenerife,4,54.1
+Tenerife,5,54.9
+Tenerife,6,54.1
+Tenerife,7,69.7
+Tenerife,8,76.3
+Tenerife,9,46.7
+Tenerife,10,64.8
+Tenerife,11,59.9
+Tenerife,12,51.7
+Sevilla,1,39.0
+Sevilla,2,42.6
+Sevilla,3,52.5
+Sevilla,4,60.3
+Sevilla,5,62.5
+Sevilla,6,54.7
+Sevilla,7,46.9
+Sevilla,8,50.4
+Sevilla,9,58.9
+Sevilla,10,62.5
+Sevilla,11,51.1
+Sevilla,12,46.9
+Valencia,1,35.8
+Valencia,2,38.4
+Valencia,3,48.1
+Valencia,4,51.4
+Valencia,5,52.6
+Valencia,6,54.0
+Valencia,7,54.6
+Valencia,8,57.2
+Valencia,9,50.1
+Valencia,10,50.1
+Valencia,11,43.6
+Valencia,12,38.4
+Costa Brava,1,46.8
+Costa Brava,2,50.1
+Costa Brava,3,56.1
+Costa Brava,4,62.9
+Costa Brava,5,69.7
+Costa Brava,6,71.4
+Costa Brava,7,74.8
+Costa Brava,8,74.8
+Costa Brava,9,67.1
+Costa Brava,10,71.4
+Costa Brava,11,54.4
+Costa Brava,12,50.1
+Costa del Sol,1,11.2
+Costa del Sol,2,22.4
+Costa del Sol,3,42.4
+Costa del Sol,4,64.8
+Costa del Sol,5,69.6
+Costa del Sol,6,65.6
+Costa del Sol,7,75.2
+Costa del Sol,8,80.0
+Costa del Sol,9,70.4
+Costa del Sol,10,66.4
+Costa del Sol,11,30.4
+Costa del Sol,12,20.0
+Granada,1,40.7
+Granada,2,45.1
+Granada,3,54.8
+Granada,4,65.1
+Granada,5,59.9
+Granada,6,55.5
+Granada,7,54.8
+Granada,8,62.9
+Granada,9,61.4
+Granada,10,64.4
+Granada,11,43.7
+Granada,12,48.1
+San Sebastián,1,40.0
+San Sebastián,2,42.1
+San Sebastián,3,48.3
+San Sebastián,4,55.9
+San Sebastián,5,58.6
+San Sebastián,6,58.6
+San Sebastián,7,61.4
+San Sebastián,8,63.5
+San Sebastián,9,60.0
+San Sebastián,10,56.6
+San Sebastián,11,46.2
+San Sebastián,12,44.8
+Ronda,1,14.5
+Ronda,2,18.7
+Ronda,3,26.7
+Ronda,4,35.5
+Ronda,5,35.3
+Ronda,6,33.0
+Ronda,7,35.3
+Ronda,8,38.9
+Ronda,9,35.9
+Ronda,10,35.7
+Ronda,11,20.4
+Ronda,12,18.9
+Picos de Europa,1,9.8
+Picos de Europa,2,10.5
+Picos de Europa,3,12.6
+Picos de Europa,4,15.4
+Picos de Europa,5,17.1
+Picos de Europa,6,19.2
+Picos de Europa,7,23.1
+Picos de Europa,8,25.2
+Picos de Europa,9,20.3
+Picos de Europa,10,16.8
+Picos de Europa,11,12.9
+Picos de Europa,12,11.5

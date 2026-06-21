@@ -1,0 +1,99 @@
+destination,region,market_origin,share_pct
+Barcelona,Cataluña,Germany,20.0
+Barcelona,Cataluña,UK,15.0
+Barcelona,Cataluña,France,18.0
+Barcelona,Cataluña,Spain (domestic),25.0
+Barcelona,Cataluña,USA,10.0
+Barcelona,Cataluña,Italy,7.0
+Barcelona,Cataluña,Netherlands,5.0
+Madrid,Madrid,Germany,20.0
+Madrid,Madrid,UK,15.0
+Madrid,Madrid,France,18.0
+Madrid,Madrid,Spain (domestic),25.0
+Madrid,Madrid,USA,10.0
+Madrid,Madrid,Italy,7.0
+Madrid,Madrid,Netherlands,5.0
+Mallorca,Islas Baleares,Germany,30.0
+Mallorca,Islas Baleares,UK,25.0
+Mallorca,Islas Baleares,France,10.0
+Mallorca,Islas Baleares,Spain (domestic),12.0
+Mallorca,Islas Baleares,USA,8.0
+Mallorca,Islas Baleares,Italy,8.0
+Mallorca,Islas Baleares,Netherlands,7.0
+Tenerife,Islas Canarias,Germany,30.0
+Tenerife,Islas Canarias,UK,25.0
+Tenerife,Islas Canarias,France,10.0
+Tenerife,Islas Canarias,Spain (domestic),12.0
+Tenerife,Islas Canarias,USA,8.0
+Tenerife,Islas Canarias,Italy,8.0
+Tenerife,Islas Canarias,Netherlands,7.0
+Sevilla,Andalucía,Germany,20.0
+Sevilla,Andalucía,UK,15.0
+Sevilla,Andalucía,France,18.0
+Sevilla,Andalucía,Spain (domestic),25.0
+Sevilla,Andalucía,USA,10.0
+Sevilla,Andalucía,Italy,7.0
+Sevilla,Andalucía,Netherlands,5.0
+Valencia,Comunidad Valenciana,Germany,20.0
+Valencia,Comunidad Valenciana,UK,15.0
+Valencia,Comunidad Valenciana,France,18.0
+Valencia,Comunidad Valenciana,Spain (domestic),25.0
+Valencia,Comunidad Valenciana,USA,10.0
+Valencia,Comunidad Valenciana,Italy,7.0
+Valencia,Comunidad Valenciana,Netherlands,5.0
+Costa Brava,Cataluña,Germany,15.0
+Costa Brava,Cataluña,UK,12.0
+Costa Brava,Cataluña,France,15.0
+Costa Brava,Cataluña,Spain (domestic),45.0
+Costa Brava,Cataluña,USA,5.0
+Costa Brava,Cataluña,Italy,5.0
+Costa Brava,Cataluña,Netherlands,3.0
+Costa del Sol,Andalucía,Germany,15.0
+Costa del Sol,Andalucía,UK,12.0
+Costa del Sol,Andalucía,France,15.0
+Costa del Sol,Andalucía,Spain (domestic),45.0
+Costa del Sol,Andalucía,USA,5.0
+Costa del Sol,Andalucía,Italy,5.0
+Costa del Sol,Andalucía,Netherlands,3.0
+Granada,Andalucía,Germany,15.0
+Granada,Andalucía,UK,12.0
+Granada,Andalucía,France,15.0
+Granada,Andalucía,Spain (domestic),45.0
+Granada,Andalucía,USA,5.0
+Granada,Andalucía,Italy,5.0
+Granada,Andalucía,Netherlands,3.0
+San Sebastián,País Vasco,Germany,20.0
+San Sebastián,País Vasco,UK,15.0
+San Sebastián,País Vasco,France,18.0
+San Sebastián,País Vasco,Spain (domestic),25.0
+San Sebastián,País Vasco,USA,10.0
+San Sebastián,País Vasco,Italy,7.0
+San Sebastián,País Vasco,Netherlands,5.0
+Ronda,Andalucía,Germany,15.0
+Ronda,Andalucía,UK,12.0
+Ronda,Andalucía,France,15.0
+Ronda,Andalucía,Spain (domestic),45.0
+Ronda,Andalucía,USA,5.0
+Ronda,Andalucía,Italy,5.0
+Ronda,Andalucía,Netherlands,3.0
+Extremadura,Extremadura,Germany,15.0
+Extremadura,Extremadura,UK,12.0
+Extremadura,Extremadura,France,15.0
+Extremadura,Extremadura,Spain (domestic),45.0
+Extremadura,Extremadura,USA,5.0
+Extremadura,Extremadura,Italy,5.0
+Extremadura,Extremadura,Netherlands,3.0
+Picos de Europa,Asturias/Cantabria,Germany,15.0
+Picos de Europa,Asturias/Cantabria,UK,12.0
+Picos de Europa,Asturias/Cantabria,France,15.0
+Picos de Europa,Asturias/Cantabria,Spain (domestic),45.0
+Picos de Europa,Asturias/Cantabria,USA,5.0
+Picos de Europa,Asturias/Cantabria,Italy,5.0
+Picos de Europa,Asturias/Cantabria,Netherlands,3.0
+Teruel,Aragón,Germany,15.0
+Teruel,Aragón,UK,12.0
+Teruel,Aragón,France,15.0
+Teruel,Aragón,Spain (domestic),45.0
+Teruel,Aragón,USA,5.0
+Teruel,Aragón,Italy,5.0
+Teruel,Aragón,Netherlands,3.0
