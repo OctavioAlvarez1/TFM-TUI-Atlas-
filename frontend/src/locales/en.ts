@@ -47,6 +47,7 @@ export const en = {
   },
   features: {
     heading: "Why Atlas?",
+    subheading: "Powerful Features",
     items: [
       {
         title: "Interactive & Real-time",

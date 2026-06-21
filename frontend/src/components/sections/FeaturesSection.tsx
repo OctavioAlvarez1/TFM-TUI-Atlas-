@@ -34,7 +34,7 @@ const FeaturesSection = () => {
               fontWeight: 700,
               textTransform: "uppercase",
               letterSpacing: ".2em",
-              color: "#2563EB",
+              color: "#0EA5E9",
               mb: 1,
             }}
           >
@@ -50,7 +50,7 @@ const FeaturesSection = () => {
               mb: 6,
             }}
           >
-            Powerful Features
+            {features.subheading ?? "Powerful Features"}
           </Typography>
         </motion.div>
 

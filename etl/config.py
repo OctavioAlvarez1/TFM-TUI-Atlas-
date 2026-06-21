@@ -122,7 +122,7 @@ INE_BASE          = "https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA"
 INE_EOH_TABLE     = "49371"  # EOH — Viajeros hoteleros por provincia/CCAA
 INE_FRONTUR_TABLE = "23988"  # FRONTUR — Turistas internacionales por CCAA
 INE_EGATUR_TABLE  = "35104"  # ETUR/EGATUR (tabla 35104 = demografía, Data[] vacía vía nult — patrón derivado de EOH)
-INE_MONTHS        = 24       # months of history to fetch
+INE_MONTHS        = 40       # months of history to fetch
 
 # ── INE province names → Atlas destination(s) ────────────────────────────────
 # Keys are substrings that appear in INE series "Nombre" field
@@ -224,7 +224,7 @@ PROCESSED_DIR = "data/processed"
 
 # ── Synthetic data config ─────────────────────────────────────────────────────
 RANDOM_SEED    = 42
-MONTHS         = 24
+MONTHS         = 40
 MARKET_ORIGINS = ["Germany", "UK", "France", "Spain (domestic)", "USA", "Italy", "Netherlands"]
 SEASONS        = {1: "low", 2: "low", 3: "shoulder", 4: "shoulder", 5: "shoulder",
                   6: "high", 7: "peak", 8: "peak", 9: "high", 10: "shoulder",

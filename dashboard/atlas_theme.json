@@ -1,0 +1,25 @@
+{
+  "name": "Atlas",
+  "dataColors": [
+    "#0EA5E9",
+    "#10B981",
+    "#F59E0B",
+    "#EF4444",
+    "#8B5CF6",
+    "#F97316",
+    "#6B7280",
+    "#38BDF8"
+  ],
+  "background": "#0B1220",
+  "foreground": "#F1F5F9",
+  "tableAccent": "#0EA5E9",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#111827" } } }],
+        "border": [{ "color": { "solid": { "color": "#1E293B" } } }],
+        "fontFamily": [{ "fontFamily": "Segoe UI" }]
+      }
+    }
+  }
+}

@@ -236,7 +236,9 @@ def build_destination_summary(
     summary = summary.merge(coords, on="destination", how="left")
 
     def status(row):
-        if row["avg_congestion"] >= 80: return "Saturado"
+        # capacity_index reflects structural saturation; avg_congestion is annual average
+        # which dilutes seasonal peaks — use capacity as primary saturation signal
+        if row["capacity_index"] >= 80: return "Saturado"
         if row["capacity_index"] < 40:  return "Infrautilizado"
         return "En crecimiento"
 

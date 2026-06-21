@@ -199,8 +199,8 @@ def fetch_frontur() -> pd.DataFrame:
     rows = []
     for dest, year_data in annual.items():
         for year, annual_total in year_data.items():
-            if year < 2023:
-                continue  # keep last 2 years only
+            if year < 2022:
+                continue  # keep last 4 years
             # split proportionally by destination capacity within shared CCAAs
             factor = cap.get(dest, 50) / 100
             for month, frac in monthly_fractions.items():

@@ -49,6 +49,7 @@ export const es: Locale = {
   },
   features: {
     heading: "¿Por qué Atlas?",
+    subheading: "Funcionalidades Principales",
     items: [
       {
         title: "Interactivo y en Tiempo Real",

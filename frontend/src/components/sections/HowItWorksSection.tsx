@@ -30,7 +30,7 @@ const HowItWorksSection = () => {
                 fontWeight: 700,
                 textTransform: "uppercase",
                 letterSpacing: ".2em",
-                color: "#2563EB",
+                color: "#0EA5E9",
                 mb: 1,
               }}
             >

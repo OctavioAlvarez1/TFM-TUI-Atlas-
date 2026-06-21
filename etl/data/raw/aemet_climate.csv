@@ -12,6 +12,19 @@ Barcelona,10,20.5,94.8
 Barcelona,11,15.7,77.9
 Barcelona,12,12.0,65.0
 Barcelona,13,17.8,85.3
+Madrid,1,7.3,48.6
+Madrid,2,9.3,55.6
+Madrid,3,11.5,63.2
+Madrid,4,15.1,75.8
+Madrid,5,19.0,89.5
+Madrid,6,23.6,94.4
+Madrid,7,28.6,76.9
+Madrid,8,28.1,78.6
+Madrid,9,21.0,96.5
+Madrid,10,17.4,83.9
+Madrid,11,11.9,64.6
+Madrid,12,8.1,51.4
+Madrid,13,16.6,81.1
 Mallorca,1,10.3,59.0
 Mallorca,2,10.7,60.4
 Mallorca,3,13.2,69.2
@@ -90,6 +103,19 @@ Costa del Sol,10,21.6,98.6
 Costa del Sol,11,17.9,85.6
 Costa del Sol,12,14.3,73.1
 Costa del Sol,13,20.3,94.0
+Granada,1,8.2,51.7
+Granada,2,10.0,58.0
+Granada,3,12.1,65.4
+Granada,4,15.1,75.8
+Granada,5,18.8,88.8
+Granada,6,23.4,95.1
+Granada,7,28.3,77.9
+Granada,8,27.8,79.7
+Granada,9,22.2,99.3
+Granada,10,19.1,89.9
+Granada,11,13.1,68.8
+Granada,12,9.4,55.9
+Granada,13,17.3,83.6
 San Sebastián,1,8.9,54.2
 San Sebastián,2,9.9,57.6
 San Sebastián,3,12.1,65.4

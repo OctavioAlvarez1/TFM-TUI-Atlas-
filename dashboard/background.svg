@@ -1,0 +1,51 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glowTop" cx="15%" cy="10%" r="45%" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#0B1220" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBottom" cx="85%" cy="90%" r="40%" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0B1220" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowCenter" cx="50%" cy="50%" r="50%" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E3A5F" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0B1220" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="48" height="48" patternUnits="userSpaceOnUse">
+      <circle cx="24" cy="24" r="1.2" fill="#38BDF8" opacity="0.18"/>
+    </pattern>
+  </defs>
+
+  <!-- Base -->
+  <rect width="1920" height="1080" fill="#0B1220"/>
+
+  <!-- Dot grid -->
+  <rect width="1920" height="1080" fill="url(#dots)"/>
+
+  <!-- Glow blobs -->
+  <rect width="1920" height="1080" fill="url(#glowTop)"/>
+  <rect width="1920" height="1080" fill="url(#glowBottom)"/>
+  <rect width="1920" height="1080" fill="url(#glowCenter)"/>
+
+  <!-- Wave layer 1 — deep -->
+  <path d="M0 920 C320 860 640 960 960 900 C1280 840 1600 940 1920 880 L1920 1080 L0 1080 Z"
+        fill="#0EA5E9" opacity="0.04"/>
+
+  <!-- Wave layer 2 — mid -->
+  <path d="M0 960 C400 900 800 1010 1200 950 C1500 905 1700 970 1920 940 L1920 1080 L0 1080 Z"
+        fill="#0EA5E9" opacity="0.06"/>
+
+  <!-- Wave layer 3 — front -->
+  <path d="M0 990 C350 955 700 1020 1050 985 C1350 955 1650 1010 1920 980 L1920 1080 L0 1080 Z"
+        fill="#38BDF8" opacity="0.05"/>
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1920" height="3" fill="#0EA5E9" opacity="0.7"/>
+
+  <!-- Subtle diagonal lines top-right -->
+  <line x1="1600" y1="0" x2="1920" y2="320" stroke="#0EA5E9" stroke-width="1" opacity="0.08"/>
+  <line x1="1680" y1="0" x2="1920" y2="240" stroke="#0EA5E9" stroke-width="1" opacity="0.06"/>
+  <line x1="1760" y1="0" x2="1920" y2="160" stroke="#0EA5E9" stroke-width="1" opacity="0.04"/>
+  <line x1="1840" y1="0" x2="1920" y2="80"  stroke="#0EA5E9" stroke-width="1" opacity="0.04"/>
+</svg>
