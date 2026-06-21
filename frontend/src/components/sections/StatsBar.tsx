@@ -8,10 +8,11 @@ const StatsBar = () => {
   return (
     <Box
       sx={{
-        bgcolor: "#070C16",
+        bgcolor: "background.paper",
         py: { xs: 6, md: 8 },
-        borderTop: "1px solid rgba(255,255,255,0.07)",
-        borderBottom: "1px solid rgba(255,255,255,0.07)",
+        borderTop: "1px solid",
+        borderBottom: "1px solid",
+        borderColor: "divider",
       }}
     >
       <Container maxWidth="xl">
@@ -29,7 +30,7 @@ const StatsBar = () => {
                     sx={{
                       fontSize: { xs: "2rem", md: "2.8rem" },
                       fontWeight: 900,
-                      color: "#38BDF8",
+                      color: "primary.main",
                       lineHeight: 1,
                       mb: 0.8,
                       letterSpacing: "-.02em",
@@ -40,7 +41,7 @@ const StatsBar = () => {
                   <Typography
                     sx={{
                       fontSize: { xs: ".82rem", md: ".9rem" },
-                      color: "rgba(255,255,255,.55)",
+                      color: "text.secondary",
                       fontWeight: 500,
                     }}
                   >

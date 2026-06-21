@@ -30,3 +30,8 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #334155;
 }
+
+@keyframes geoDrift {
+  from { background-position: 0px 0px; }
+  to   { background-position: 36px 36px; }
+}

@@ -1,15 +1,19 @@
 import { Box, Container, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import { motion } from "framer-motion";
 import { useLanguage } from "../../context/LanguageContext";
+import GeoDots from "../common/GeoDots";
 
 const ProblemSection = () => {
   const { locale } = useLanguage();
   const p = locale.problema;
+  const theme = useTheme();
+  const dark = theme.palette.mode === "dark";
 
   return (
-    <Box sx={{ bgcolor: "#070C16", py: { xs: 8, md: 12 } }}>
-      <Container maxWidth="xl">
-        {/* Header */}
+    <Box sx={{ bgcolor: "background.default", py: { xs: 8, md: 12 }, position: "relative", overflow: "hidden" }}>
+      {!dark && <GeoDots />}
+      <Container maxWidth="xl" sx={{ position: "relative", zIndex: 1 }}>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -22,7 +26,7 @@ const ProblemSection = () => {
                 fontSize: ".82rem",
                 fontWeight: 700,
                 textTransform: "uppercase",
-                letterSpacing: ".2em",
+                letterSpacing: ".25em",
                 color: "#EF4444",
                 mb: 1.5,
               }}
@@ -32,10 +36,10 @@ const ProblemSection = () => {
             <Typography
               component="h2"
               sx={{
-                fontSize: { xs: "1.7rem", md: "2.4rem" },
+                fontSize: { xs: "1.8rem", md: "2.8rem" },
                 fontWeight: 900,
-                color: "#FFFFFF",
-                lineHeight: 1.2,
+                color: "text.primary",
+                lineHeight: 1.15,
                 mb: 2,
                 maxWidth: 680,
                 mx: "auto",
@@ -46,10 +50,10 @@ const ProblemSection = () => {
             <Typography
               sx={{
                 fontSize: { xs: ".9rem", md: "1rem" },
-                color: "rgba(255,255,255,.5)",
+                color: "text.secondary",
                 maxWidth: 560,
                 mx: "auto",
-                lineHeight: 1.7,
+                lineHeight: 1.75,
               }}
             >
               {p.subtitle}
@@ -57,7 +61,6 @@ const ProblemSection = () => {
           </Box>
         </motion.div>
 
-        {/* Challenge cards */}
         <Box
           sx={{
             display: "grid",
@@ -68,37 +71,40 @@ const ProblemSection = () => {
           {p.challenges.map((c, i) => (
             <motion.div
               key={c.title}
-              initial={{ opacity: 0, y: 32 }}
+              initial={{ opacity: 0, y: 44 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.55, delay: i * 0.12 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.65, delay: i * 0.12, ease: [0.4, 0, 0.2, 1] }}
             >
               <Box
                 sx={{
                   height: "100%",
                   p: { xs: 3, md: 4 },
-                  borderRadius: "20px",
-                  background: `linear-gradient(145deg, ${c.color}0d 0%, rgba(11,18,32,0) 60%)`,
-                  border: "1px solid",
-                  borderColor: `${c.color}28`,
+                  borderRadius: "28px",
+                  background: dark
+                    ? `linear-gradient(145deg, ${c.color}10 0%, #111827 100%)`
+                    : `linear-gradient(145deg, ${c.color}08 0%, #FFFFFF 100%)`,
+                  border: `1px solid ${c.color}25`,
                   position: "relative",
                   overflow: "hidden",
-                  transition: "border-color .25s",
-                  "&:hover": { borderColor: `${c.color}55` },
+                  transition: "all .35s ease",
+                  "&:hover": {
+                    transform: "translateY(-6px)",
+                    boxShadow: dark
+                      ? `0 24px 50px ${c.color}22`
+                      : `0 24px 50px ${c.color}18`,
+                    border: `1px solid ${c.color}55`,
+                  },
                 }}
               >
-                {/* Glow accent top-left */}
+                {/* Top accent bar */}
                 <Box
                   sx={{
                     position: "absolute",
-                    top: -40,
-                    left: -40,
-                    width: 160,
-                    height: 160,
-                    borderRadius: "50%",
-                    background: `${c.color}12`,
-                    filter: "blur(40px)",
-                    pointerEvents: "none",
+                    top: 0, left: 0, right: 0,
+                    height: 3,
+                    bgcolor: c.color,
+                    opacity: 0.6,
                   }}
                 />
 
@@ -111,6 +117,7 @@ const ProblemSection = () => {
                     lineHeight: 1,
                     letterSpacing: "-.03em",
                     mb: 0.5,
+                    mt: 1,
                   }}
                 >
                   {c.stat}
@@ -128,7 +135,6 @@ const ProblemSection = () => {
                   {c.statLabel}
                 </Typography>
 
-                {/* Divider */}
                 <Box
                   sx={{
                     width: 36,
@@ -144,7 +150,7 @@ const ProblemSection = () => {
                   sx={{
                     fontSize: { xs: "1rem", md: "1.1rem" },
                     fontWeight: 800,
-                    color: "#FFF",
+                    color: "text.primary",
                     mb: 1.5,
                   }}
                 >
@@ -153,7 +159,7 @@ const ProblemSection = () => {
                 <Typography
                   sx={{
                     fontSize: ".88rem",
-                    color: "rgba(255,255,255,.52)",
+                    color: "text.secondary",
                     lineHeight: 1.75,
                   }}
                 >

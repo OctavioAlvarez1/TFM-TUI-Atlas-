@@ -1,22 +1,30 @@
 import { Box, Container, Typography, Stack, Button } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import { motion } from "framer-motion";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useLanguage } from "../../context/LanguageContext";
+import GeoDots from "../common/GeoDots";
 
 const STEP_COLORS = ["#0EA5E9", "#10B981", "#F59E0B", "#6366F1"];
 
 const HowItWorksSection = () => {
   const { locale } = useLanguage();
   const hw = locale.howItWorks;
+  const theme = useTheme();
+  const dark = theme.palette.mode === "dark";
 
   return (
     <Box
       sx={{
-        bgcolor: "#070C16",
+        bgcolor: "background.default",
         py: { xs: 8, md: 12 },
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      <Container maxWidth="xl">
+      {!dark && <GeoDots />}
+
+      <Container maxWidth="xl" sx={{ position: "relative", zIndex: 1 }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -30,7 +38,7 @@ const HowItWorksSection = () => {
                 fontWeight: 700,
                 textTransform: "uppercase",
                 letterSpacing: ".2em",
-                color: "#0EA5E9",
+                color: "primary.main",
                 mb: 1,
               }}
             >
@@ -41,7 +49,7 @@ const HowItWorksSection = () => {
               sx={{
                 fontSize: { xs: "1.7rem", md: "2.2rem" },
                 fontWeight: 900,
-                color: "#FFFFFF",
+                color: "text.primary",
               }}
             >
               {hw.heading}
@@ -59,7 +67,6 @@ const HowItWorksSection = () => {
         >
           {/* LEFT — 4-step flow */}
           <Box>
-            {/* Steps row */}
             <Box
               sx={{
                 display: { xs: "flex", md: "grid" },
@@ -117,7 +124,7 @@ const HowItWorksSection = () => {
                           zIndex: 0,
                         }}
                       >
-                        <ArrowForwardIcon sx={{ fontSize: "1rem", color: "rgba(255,255,255,.2)" }} />
+                        <ArrowForwardIcon sx={{ fontSize: "1rem", color: "text.disabled" }} />
                       </Box>
                     )}
 
@@ -125,7 +132,7 @@ const HowItWorksSection = () => {
                       sx={{
                         fontWeight: 700,
                         fontSize: ".85rem",
-                        color: "#FFF",
+                        color: "text.primary",
                         mb: 0.5,
                       }}
                     >
@@ -134,7 +141,7 @@ const HowItWorksSection = () => {
                     <Typography
                       sx={{
                         fontSize: ".78rem",
-                        color: "rgba(255,255,255,.5)",
+                        color: "text.secondary",
                         lineHeight: 1.6,
                       }}
                     >
@@ -157,9 +164,12 @@ const HowItWorksSection = () => {
               sx={{
                 p: { xs: 3, md: 4 },
                 borderRadius: "20px",
-                background:
-                  "linear-gradient(135deg, rgba(14,165,233,0.12) 0%, rgba(16,185,129,0.08) 100%)",
-                border: "1px solid rgba(14,165,233,0.2)",
+                bgcolor: "background.paper",
+                border: "1px solid",
+                borderColor: "primary.main",
+                background: dark
+                  ? "linear-gradient(135deg, rgba(14,165,233,0.08) 0%, rgba(16,185,129,0.05) 100%)"
+                  : "linear-gradient(135deg, rgba(14,165,233,0.06) 0%, rgba(16,185,129,0.04) 100%)",
                 backdropFilter: "blur(10px)",
               }}
             >
@@ -167,7 +177,7 @@ const HowItWorksSection = () => {
                 sx={{
                   fontSize: { xs: "1.2rem", md: "1.4rem" },
                   fontWeight: 900,
-                  color: "#FFF",
+                  color: "text.primary",
                   mb: 1.5,
                   lineHeight: 1.3,
                 }}
@@ -177,7 +187,7 @@ const HowItWorksSection = () => {
               <Typography
                 sx={{
                   fontSize: ".9rem",
-                  color: "rgba(255,255,255,.6)",
+                  color: "text.secondary",
                   lineHeight: 1.7,
                   mb: 3,
                 }}
@@ -189,14 +199,14 @@ const HowItWorksSection = () => {
                   variant="contained"
                   size="large"
                   sx={{
-                    bgcolor: "#0EA5E9",
+                    bgcolor: "primary.main",
                     color: "#FFF",
                     fontWeight: 700,
                     py: 1.3,
                     borderRadius: "10px",
                     textTransform: "none",
                     fontSize: ".95rem",
-                    "&:hover": { bgcolor: "#0284C7" },
+                    "&:hover": { bgcolor: "primary.dark" },
                   }}
                 >
                   {hw.ctaPrimary}
@@ -204,11 +214,11 @@ const HowItWorksSection = () => {
                 <Button
                   variant="text"
                   sx={{
-                    color: "rgba(255,255,255,.55)",
+                    color: "text.secondary",
                     fontWeight: 500,
                     textTransform: "none",
                     fontSize: ".9rem",
-                    "&:hover": { color: "#FFF", background: "transparent" },
+                    "&:hover": { color: "text.primary", background: "transparent" },
                   }}
                 >
                   {hw.ctaSecondary}

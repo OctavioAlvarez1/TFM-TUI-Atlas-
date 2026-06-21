@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from "react";
-import { Box, Container, Typography, Chip, IconButton } from "@mui/material";
+import { Box, Container, Typography, Chip, IconButton, ThemeProvider as MuiThemeProvider } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import darkTheme from "../../theme/darkTheme";
 import { motion } from "framer-motion";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -73,10 +75,10 @@ const CARDS_META = [
 const FakeHeatmap = () => (
   <Box sx={{ display: "flex", gap: 2 }}>
     {/* Map grid */}
-    <Box sx={{ flex: 1, height: 200, position: "relative", bgcolor: "rgba(14,165,233,0.04)", borderRadius: "10px", overflow: "hidden" }}>
+    <Box sx={{ flex: 1, height: 200, position: "relative", bgcolor: "rgba(13,211,197,0.04)", borderRadius: "10px", overflow: "hidden" }}>
       <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.45, p: 1 }}>
         {Array.from({ length: 110 }, (_, i) => {
-          const palette = ["#16A34A","#CA8A04","#0EA5E9","#16A34A","#EA580C","#CA8A04","#16A34A","#0EA5E9","#DC2626","#CA8A04","#16A34A","#16A34A","#EA580C","#0EA5E9","#CA8A04"];
+          const palette = ["#16A34A","#CA8A04","#0DD3C5","#16A34A","#EA580C","#CA8A04","#16A34A","#0DD3C5","#DC2626","#CA8A04","#16A34A","#16A34A","#EA580C","#0DD3C5","#CA8A04"];
           return (
             <Box key={i} sx={{ width: "calc(10% - 5px)", height: 20, borderRadius: "3px", bgcolor: palette[i % palette.length], opacity: 0.22 + (i % 5) * 0.14 }} />
           );
@@ -99,8 +101,8 @@ const FakeHeatmap = () => (
     <Box sx={{ width: 170, display: "flex", flexDirection: "column", gap: 1, flexShrink: 0 }}>
       <Typography sx={{ fontSize: ".65rem", color: "text.secondary", fontWeight: 600 }}>Top destinos</Typography>
       {[
-        { name: "Barcelona", pct: 28, color: "#0EA5E9" },
-        { name: "Madrid", pct: 22, color: "#38BDF8" },
+        { name: "Barcelona", pct: 28, color: "#0DD3C5" },
+        { name: "Madrid", pct: 22, color: "#0DD3C5" },
         { name: "Málaga", pct: 15, color: "#10B981" },
         { name: "Sevilla", pct: 12, color: "#F59E0B" },
         { name: "Valencia", pct: 9,  color: "#6366F1" },
@@ -129,7 +131,7 @@ const FakeDemandViz = ({
   donutCenter: string;
   donutCenterSub: string;
 }) => {
-  const colors = ["#0EA5E9", "#10B981", "#F59E0B", "#6366F1", "#E879F9"];
+  const colors = ["#0DD3C5", "#10B981", "#F59E0B", "#6366F1", "#E879F9"];
   return (
     <Box sx={{ display: "flex", gap: 2, height: 200 }}>
       {/* Line chart */}
@@ -146,8 +148,8 @@ const FakeDemandViz = ({
         <svg viewBox="0 0 240 155" preserveAspectRatio="none" style={{ width: "100%", height: "100%", paddingLeft: 8 }}>
           <defs>
             <linearGradient id="dg1" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#0EA5E9" stopOpacity="0.25" />
-              <stop offset="100%" stopColor="#0EA5E9" stopOpacity="0" />
+              <stop offset="0%" stopColor="#0DD3C5" stopOpacity="0.25" />
+              <stop offset="100%" stopColor="#0DD3C5" stopOpacity="0" />
             </linearGradient>
             <linearGradient id="dg2" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#10B981" stopOpacity="0.18" />
@@ -158,10 +160,10 @@ const FakeDemandViz = ({
           {[35,60,85,110,135].map(y => (
             <line key={y} x1="24" y1={y} x2="240" y2={y} stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
           ))}
-          {/* 2024 area */}
+          {/* 2026 area */}
           <path d="M24,115 C54,100 84,52 124,60 C154,66 194,42 240,46 L240,155 L24,155 Z" fill="url(#dg1)" />
-          <path d="M24,115 C54,100 84,52 124,60 C154,66 194,42 240,46" fill="none" stroke="#0EA5E9" strokeWidth="2" strokeLinecap="round" />
-          {/* 2023 area */}
+          <path d="M24,115 C54,100 84,52 124,60 C154,66 194,42 240,46" fill="none" stroke="#0DD3C5" strokeWidth="2" strokeLinecap="round" />
+          {/* 2025 area */}
           <path d="M24,128 C54,118 84,82 124,88 C154,93 194,68 240,72 L240,155 L24,155 Z" fill="url(#dg2)" />
           <path d="M24,128 C54,118 84,82 124,88 C154,93 194,68 240,72" fill="none" stroke="#10B981" strokeWidth="2" strokeLinecap="round" />
           {/* X axis */}
@@ -175,7 +177,7 @@ const FakeDemandViz = ({
         </Box>
         {/* Legend */}
         <Box sx={{ position: "absolute", top: 10, right: 10, display: "flex", gap: 1 }}>
-          {[{ c: "#0EA5E9", l: "2024" }, { c: "#10B981", l: "2023" }].map(item => (
+          {[{ c: "#0DD3C5", l: "2026" }, { c: "#10B981", l: "2025" }].map(item => (
             <Box key={item.l} sx={{ display: "flex", alignItems: "center", gap: 0.4 }}>
               <Box sx={{ width: 16, height: 2, bgcolor: item.c, borderRadius: 1 }} />
               <Typography sx={{ fontSize: ".55rem", color: "rgba(255,255,255,.5)" }}>{item.l}</Typography>
@@ -192,7 +194,7 @@ const FakeDemandViz = ({
           <Box sx={{ position: "relative", flexShrink: 0 }}>
             <svg viewBox="0 0 80 80" style={{ width: 80, height: 80, transform: "rotate(-90deg)" }}>
               <circle cx="40" cy="40" r="30" fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="12" />
-              <circle cx="40" cy="40" r="30" fill="none" stroke="#0EA5E9" strokeWidth="12" strokeDasharray="53 135" />
+              <circle cx="40" cy="40" r="30" fill="none" stroke="#0DD3C5" strokeWidth="12" strokeDasharray="53 135" />
               <circle cx="40" cy="40" r="30" fill="none" stroke="#10B981" strokeWidth="12" strokeDasharray="38 135" strokeDashoffset="-53" />
               <circle cx="40" cy="40" r="30" fill="none" stroke="#F59E0B" strokeWidth="12" strokeDasharray="27 135" strokeDashoffset="-91" />
               <circle cx="40" cy="40" r="30" fill="none" stroke="#6366F1" strokeWidth="12" strokeDasharray="24 135" strokeDashoffset="-118" />
@@ -316,7 +318,7 @@ const FakeGrowthViz = () => (
       {[
         { label: "Ecoturismo",    value: 8,  color: "#10B981" },
         { label: "Rural",         value: 7,  color: "#16A34A" },
-        { label: "Cultural",      value: 5,  color: "#0EA5E9" },
+        { label: "Cultural",      value: 5,  color: "#0DD3C5" },
         { label: "Gastronómica",  value: 3,  color: "#F59E0B" },
       ].map(d => (
         <Box key={d.label}>
@@ -372,14 +374,14 @@ const KpiBox = ({
         width: 36,
         height: 36,
         borderRadius: "8px",
-        bgcolor: positive ? "rgba(14,165,233,0.12)" : "rgba(220,38,38,0.12)",
+        bgcolor: positive ? "rgba(13,211,197,0.12)" : "rgba(220,38,38,0.12)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         flexShrink: 0,
       }}
     >
-      <Icon sx={{ fontSize: "1.1rem", color: positive ? "#38BDF8" : "#F87171" }} />
+      <Icon sx={{ fontSize: "1.1rem", color: positive ? "#0DD3C5" : "#F87171" }} />
     </Box>
     <Box sx={{ minWidth: 0 }}>
       <Typography sx={{ fontSize: ".66rem", color: "text.secondary", mb: 0.3, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
@@ -432,13 +434,13 @@ const CarouselCard = ({
   return (
     <Box
       sx={{
-        bgcolor: "background.paper",
+        background: "linear-gradient(158deg, rgba(5,62,78,0.97) 0%, rgba(3,44,58,0.95) 100%)",
         border: "1px solid",
-        borderColor: isActive ? "rgba(14,165,233,0.5)" : "divider",
+        borderColor: isActive ? "rgba(13,211,197,0.50)" : "rgba(13,211,197,0.18)",
         borderRadius: "20px",
         overflow: "hidden",
         transition: "border-color 0.4s, box-shadow 0.4s",
-        boxShadow: isActive ? "0 24px 64px rgba(14,165,233,0.14)" : "none",
+        boxShadow: isActive ? "0 24px 64px rgba(13,211,197,0.18)" : "0 4px 24px rgba(0,0,0,0.35)",
       }}
     >
       {/* ── Header ── */}
@@ -458,20 +460,20 @@ const CarouselCard = ({
             width: 40,
             height: 40,
             borderRadius: "10px",
-            bgcolor: "rgba(14,165,233,0.1)",
+            bgcolor: "rgba(13,211,197,0.10)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             flexShrink: 0,
           }}
         >
-          <HeaderIcon sx={{ fontSize: "1.3rem", color: "#38BDF8" }} />
+          <HeaderIcon sx={{ fontSize: "1.3rem", color: "#0DD3C5" }} />
         </Box>
         <Box sx={{ flex: 1, minWidth: 0 }}>
           <Typography
             sx={{
               fontSize: ".63rem",
-              color: "#38BDF8",
+              color: "#0DD3C5",
               fontWeight: 700,
               letterSpacing: 1.4,
               mb: 0.2,
@@ -495,21 +497,21 @@ const CarouselCard = ({
         </Box>
         <Box sx={{ display: "flex", gap: 1, flexShrink: 0 }}>
           <Chip
-            icon={<FilterListIcon sx={{ fontSize: ".85rem !important", color: "#38BDF8 !important" }} />}
+            icon={<FilterListIcon sx={{ fontSize: ".85rem !important", color: "#0DD3C5 !important" }} />}
             label="All Regions"
             size="small"
             sx={{
-              bgcolor: "rgba(14,165,233,0.08)",
-              color: "#38BDF8",
+              bgcolor: "rgba(13,211,197,0.08)",
+              color: "#0DD3C5",
               fontSize: ".63rem",
               fontWeight: 600,
               height: 26,
-              border: "1px solid rgba(14,165,233,0.2)",
+              border: "1px solid rgba(13,211,197,0.20)",
             }}
           />
           <Chip
             icon={<CalendarTodayOutlinedIcon sx={{ fontSize: ".8rem !important", color: "rgba(255,255,255,0.4) !important" }} />}
-            label="Jul 1 – Jul 31, 2024"
+            label="Jul 1 – Jul 31, 2026"
             size="small"
             sx={{
               bgcolor: "rgba(255,255,255,0.05)",
@@ -565,8 +567,8 @@ const CarouselCard = ({
           mx: { xs: 1.5, md: 2 },
           mb: { xs: 1.5, md: 2 },
           p: { xs: 1.2, md: 1.5 },
-          bgcolor: "rgba(14,165,233,0.07)",
-          border: "1px solid rgba(14,165,233,0.2)",
+          bgcolor: "rgba(249,115,22,0.08)",
+          border: "1px solid rgba(13,211,197,0.20)",
           borderRadius: "12px",
           display: "flex",
           alignItems: "center",
@@ -579,14 +581,14 @@ const CarouselCard = ({
             alignItems: "center",
             gap: 0.6,
             flexShrink: 0,
-            bgcolor: "rgba(14,165,233,0.15)",
+            bgcolor: "rgba(249,115,22,0.15)",
             borderRadius: "8px",
             px: 1,
             py: 0.5,
           }}
         >
-          <AutoAwesomeIcon sx={{ fontSize: ".85rem", color: "#38BDF8" }} />
-          <Typography sx={{ fontSize: ".68rem", color: "#38BDF8", fontWeight: 700 }}>AI Insight</Typography>
+          <AutoAwesomeIcon sx={{ fontSize: ".85rem", color: "#F97316" }} />
+          <Typography sx={{ fontSize: ".68rem", color: "#F97316", fontWeight: 700 }}>Perspectiva</Typography>
         </Box>
         <Typography sx={{ fontSize: ".76rem", color: "text.secondary", flex: 1, lineHeight: 1.55 }}>
           {card.aiInsight}
@@ -597,14 +599,14 @@ const CarouselCard = ({
           onClick={() => {}}
           sx={{
             flexShrink: 0,
-            bgcolor: "rgba(14,165,233,0.12)",
-            color: "#0EA5E9",
+            bgcolor: "rgba(13,211,197,0.12)",
+            color: "#0DD3C5",
             fontSize: ".68rem",
             fontWeight: 700,
             height: 28,
-            border: "1px solid rgba(14,165,233,0.3)",
+            border: "1px solid rgba(13,211,197,0.28)",
             cursor: "pointer",
-            "&:hover": { bgcolor: "rgba(14,165,233,0.22)" },
+            "&:hover": { bgcolor: "rgba(13,211,197,0.22)" },
           }}
         />
       </Box>
@@ -617,6 +619,8 @@ const CarouselCard = ({
 const DashboardPreviewSection = () => {
   const { locale } = useLanguage();
   const dp = locale.dashboardPreview;
+  const theme = useTheme();
+  const dark = theme.palette.mode === "dark";
   const [activeIdx, setActiveIdx] = useState(0);
   const [containerWidth, setContainerWidth] = useState(1100);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -642,7 +646,7 @@ const DashboardPreviewSection = () => {
   const next = () => setActiveIdx((i) => (i + 1) % total);
 
   return (
-    <Box sx={{ bgcolor: "#0B1220", py: { xs: 8, md: 12 } }}>
+    <Box id="dashboard-preview" sx={{ bgcolor: "background.paper", py: { xs: 8, md: 12 } }}>
       {/* Header */}
       <Container maxWidth="xl">
         <motion.div
@@ -655,8 +659,8 @@ const DashboardPreviewSection = () => {
             <Chip
               label={dp.badge}
               sx={{
-                bgcolor: "rgba(14,165,233,0.1)",
-                color: "#38BDF8",
+                bgcolor: "rgba(13,211,197,0.10)",
+                color: "#0DD3C5",
                 fontWeight: 700,
                 fontSize: ".72rem",
                 mb: 2,
@@ -708,11 +712,13 @@ const DashboardPreviewSection = () => {
                 cursor: i !== activeIdx ? "pointer" : "default",
               }}
             >
-              <CarouselCard
-                card={card as DashCard}
-                vizIdx={i}
-                isActive={i === activeIdx}
-              />
+              <MuiThemeProvider theme={darkTheme}>
+                <CarouselCard
+                  card={card as DashCard}
+                  vizIdx={i}
+                  isActive={i === activeIdx}
+                />
+              </MuiThemeProvider>
             </Box>
           ))}
         </motion.div>
@@ -725,13 +731,15 @@ const DashboardPreviewSection = () => {
             left: arrowPos,
             top: "50%",
             transform: "translateY(-50%)",
-            bgcolor: "rgba(15,23,42,0.85)",
-            color: "#38BDF8",
+            bgcolor: dark ? "rgba(15,23,42,0.85)" : "background.paper",
+            color: "primary.main",
             width: 44,
             height: 44,
-            border: "1px solid rgba(14,165,233,0.3)",
+            border: "1px solid",
+            borderColor: dark ? "rgba(13,211,197,0.28)" : "divider",
             backdropFilter: "blur(8px)",
-            "&:hover": { bgcolor: "rgba(14,165,233,0.2)", borderColor: "rgba(14,165,233,0.6)" },
+            boxShadow: dark ? "none" : "0 2px 12px rgba(0,0,0,0.1)",
+            "&:hover": { bgcolor: dark ? "rgba(13,211,197,0.20)" : "action.hover" },
           }}
         >
           <ChevronLeftIcon />
@@ -745,13 +753,15 @@ const DashboardPreviewSection = () => {
             right: arrowPos,
             top: "50%",
             transform: "translateY(-50%)",
-            bgcolor: "rgba(15,23,42,0.85)",
-            color: "#38BDF8",
+            bgcolor: dark ? "rgba(15,23,42,0.85)" : "background.paper",
+            color: "primary.main",
             width: 44,
             height: 44,
-            border: "1px solid rgba(14,165,233,0.3)",
+            border: "1px solid",
+            borderColor: dark ? "rgba(13,211,197,0.28)" : "divider",
             backdropFilter: "blur(8px)",
-            "&:hover": { bgcolor: "rgba(14,165,233,0.2)", borderColor: "rgba(14,165,233,0.6)" },
+            boxShadow: dark ? "none" : "0 2px 12px rgba(0,0,0,0.1)",
+            "&:hover": { bgcolor: dark ? "rgba(13,211,197,0.20)" : "action.hover" },
           }}
         >
           <ChevronRightIcon />
@@ -768,7 +778,7 @@ const DashboardPreviewSection = () => {
               width: i === activeIdx ? 28 : 8,
               height: 8,
               borderRadius: 4,
-              bgcolor: i === activeIdx ? "#0EA5E9" : "rgba(255,255,255,0.18)",
+              bgcolor: i === activeIdx ? "primary.main" : dark ? "rgba(255,255,255,0.18)" : "rgba(0,0,0,0.15)",
               cursor: "pointer",
               transition: "all 0.3s ease",
             }}

@@ -4,7 +4,7 @@ import { useLanguage } from "../../context/LanguageContext";
 
 const SOURCE_COLORS: Record<string, string> = {
   OpenStreetMap: "#16A34A",
-  INE: "#2563EB",
+  INE: "#0EA5E9",
   AEMET: "#0EA5E9",
   Google: "#F59E0B",
   Tripadvisor: "#10B981",
@@ -20,7 +20,7 @@ const DataSourcesSection = () => {
   return (
     <Box
       sx={{
-        bgcolor: "#0B1220",
+        bgcolor: "background.paper",
         py: { xs: 8, md: 10 },
       }}
     >
@@ -38,7 +38,7 @@ const DataSourcesSection = () => {
                 fontWeight: 700,
                 textTransform: "uppercase",
                 letterSpacing: ".2em",
-                color: "#2563EB",
+                color: "primary.main",
                 mb: 1,
               }}
             >
@@ -83,7 +83,7 @@ const DataSourcesSection = () => {
                     px: 2.5,
                     py: 1.5,
                     borderRadius: "12px",
-                    bgcolor: "background.paper",
+                    bgcolor: "background.default",
                     border: "1px solid",
                     borderColor: "divider",
                     cursor: "default",

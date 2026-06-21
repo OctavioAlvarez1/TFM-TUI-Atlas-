@@ -16,7 +16,7 @@ export const en = {
     dashboardLabel: "OVERVIEW",
     dashboardTitle: "Tourism Offer & Demand",
     dashboardRegion: "All Regions",
-    dashboardDate: "Jul 1 – Jul 31, 2024",
+    dashboardDate: "Jul 1 – Jul 31, 2026",
     kpi: {
       arrivals: "Total Arrivals",
       arrivalsValue: "22.5M",
@@ -68,7 +68,7 @@ export const en = {
     ],
   },
   stats: [
-    { value: "96.8M", label: "International arrivals (Spain, 2023)" },
+    { value: "104.3M", label: "International arrivals (Spain, 2025)" },
     { value: "14", label: "Destinations analyzed" },
     { value: "15+", label: "Integrated data sources" },
     { value: "134.7Bn€", label: "Tourism revenue monitored" },
@@ -256,7 +256,7 @@ export const en = {
       problemText:
         "85% of tourists visit only 10% of destinations. Atlas visualises geographic pressure across Spain to help destination managers make data-driven decisions.",
     },
-    copyright: "© 2024 Horizon by TUI. All rights reserved.",
+    copyright: "© 2026 Atlas by TUI. All rights reserved.",
     bottomLinks: ["About", "Methodology", "Data Sources"],
   },
 };

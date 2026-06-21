@@ -1,6 +1,6 @@
-# Horizon Design System
+# TUI Suite Design System
 
-Reusable patterns from the Horizon frontend. Reference this when extending Horizon or building new React/MUI v9 projects in the TUI suite.
+Reusable patterns shared across the TUI Care Foundation Future Shapers Spain suite. Reference this when extending Horizon, Atlas, or building new React/MUI v9 projects in the suite.
 
 ---
 
@@ -285,3 +285,56 @@ For Plotly-based projects, map these patterns:
 | Status breakdown | `plotly.pie` or colored `st.metric` delta |
 
 Use the same hex colors from Section 9 in all Plotly figures for consistency across the suite.
+
+---
+
+## 11. Atlas Coastal Turquoise (Atlas-specific)
+
+Atlas overrides the default Horizon blue palette with a Mediterranean coastal identity derived from the Valencia coast hero photo.
+
+### Palette
+
+| Token | Value | Usage |
+|---|---|---|
+| Card background | `linear-gradient(158deg, rgba(5,62,78,0.97) 0%, rgba(3,44,58,0.95) 100%)` | Dashboard cards, footer (light) |
+| Turquoise `#0DD3C5` | — | Replace `#0EA5E9`/`#38BDF8` for borders, labels, icons |
+| Coral `#F97316` | — | "Perspectiva" boxes, warm accents |
+| Sunset gradient | `#0DD3C5 → #22D3EE → #818CF8 → #F97316 → #EAB308` | Card header bar |
+
+### Dark Section Injection
+
+Any section with a coastal teal background wraps its children in `darkTheme` so MUI tokens render correctly as white text:
+
+```tsx
+import darkTheme from "../../theme/darkTheme";
+import { ThemeProvider as MuiThemeProvider } from "@mui/material";
+
+// Per-card (DashboardPreviewSection)
+<MuiThemeProvider theme={darkTheme}>
+  <CoastalCard />
+</MuiThemeProvider>
+
+// Entire section (Footer in light mode)
+return dark ? content : <MuiThemeProvider theme={darkTheme}>{content}</MuiThemeProvider>;
+```
+
+### GeoDots (Light Mode Section Animation)
+
+Import from `components/common/GeoDots.tsx`. Add to white-background sections to avoid blank appearance in light mode:
+
+```tsx
+import GeoDots from "../common/GeoDots";
+
+<Box sx={{ position: "relative", overflow: "hidden", /* ...rest of section sx */ }}>
+  {!dark && <GeoDots />}
+  <Container sx={{ position: "relative", zIndex: 1 }}>
+    {/* section content */}
+  </Container>
+</Box>
+```
+
+Requires `@keyframes geoDrift` in `index.css` (already present in Atlas).
+
+### "Perspectiva" vs "AI Insight"
+
+In Atlas, the AI insight chip label is **"Perspectiva"** (not "AI Insight"). Use coral `#F97316` for the label and icon colour inside coral `rgba(249,115,22,0.08)` background boxes.

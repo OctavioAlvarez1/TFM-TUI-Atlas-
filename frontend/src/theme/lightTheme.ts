@@ -11,10 +11,16 @@ const lightTheme = createTheme({
     secondary: {
       main: "#0288D1",
     },
+
+    background: {
+      default: "#F8FAFC",
+      paper: "#FFFFFF",
+    },
   },
-    typography: {
+
+  typography: {
     fontFamily: "Inter, sans-serif",
-  }
+  },
 });
 
 export default lightTheme;

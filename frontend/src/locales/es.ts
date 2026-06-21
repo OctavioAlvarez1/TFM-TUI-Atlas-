@@ -18,7 +18,7 @@ export const es: Locale = {
     dashboardLabel: "VISIÓN GENERAL",
     dashboardTitle: "Oferta y Demanda Turística",
     dashboardRegion: "Todas las Regiones",
-    dashboardDate: "1 Jul – 31 Jul, 2024",
+    dashboardDate: "1 Jul – 31 Jul, 2026",
     kpi: {
       arrivals: "Total Llegadas",
       arrivalsValue: "22.5M",
@@ -70,7 +70,7 @@ export const es: Locale = {
     ],
   },
   stats: [
-    { value: "96.8M", label: "Llegadas internacionales (España, 2023)" },
+    { value: "104.3M", label: "Llegadas internacionales (España, 2025)" },
     { value: "14", label: "Destinos analizados" },
     { value: "15+", label: "Fuentes de datos integradas" },
     { value: "134.7Bn€", label: "Ingresos turísticos monitorizados" },
@@ -258,7 +258,7 @@ export const es: Locale = {
       problemText:
         "El 85% de los turistas visita solo el 10% de los destinos. Atlas visualiza la presión geográfica en España para ayudar a los gestores de destinos a tomar decisiones basadas en datos.",
     },
-    copyright: "© 2024 Horizon by TUI. All rights reserved.",
+    copyright: "© 2026 Atlas by TUI. All rights reserved.",
     bottomLinks: ["Acerca de", "Metodología", "Fuentes de datos"],
   },
 };

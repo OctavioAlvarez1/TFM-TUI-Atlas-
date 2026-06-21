@@ -5,23 +5,32 @@ import {
   Grid,
   Stack,
   Typography,
+  ThemeProvider as MuiThemeProvider,
 } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 import horizonLogo from "../../assets/logo/horizon-logo.svg";
+import darkTheme from "../../theme/darkTheme";
 import { useLanguage } from "../../context/LanguageContext";
 
 const Footer = () => {
   const { locale } = useLanguage();
+  const theme = useTheme();
+  const dark = theme.palette.mode === "dark";
   const footerLinks = [
     { heading: locale.footer.features.heading, items: locale.footer.features.items },
     { heading: locale.footer.technology.heading, items: locale.footer.technology.items },
   ];
-  return (
+  const footer = (
     <Box
       component="footer"
       sx={{
-        bgcolor: "#070C16",
-        color: "#FFF",
+        background: dark
+          ? undefined
+          : "linear-gradient(158deg, rgba(5,62,78,0.97) 0%, rgba(3,44,58,0.95) 100%)",
+        bgcolor: dark ? "background.paper" : undefined,
+        borderTop: "1px solid",
+        borderColor: dark ? "divider" : "rgba(13,211,197,0.22)",
         pt: { xs: 6, md: 10 },
         pb: 4,
       }}
@@ -45,7 +54,7 @@ const Footer = () => {
                   fontSize: "1.25rem",
                   fontWeight: 900,
                   letterSpacing: ".08em",
-                  color: "#FFF",
+                  color: "text.primary",
                 }}
               >
                 ATLAS
@@ -54,7 +63,8 @@ const Footer = () => {
 
             <Typography
               sx={{
-                color: "rgba(255,255,255,.5)",
+                color: "primary.main",
+                fontWeight: 700,
                 fontSize: ".85rem",
                 mb: 2.5,
               }}
@@ -64,7 +74,7 @@ const Footer = () => {
 
             <Typography
               sx={{
-                color: "rgba(255,255,255,.55)",
+                color: "text.secondary",
                 lineHeight: 1.8,
                 fontSize: ".9rem",
                 maxWidth: 340,
@@ -83,10 +93,10 @@ const Footer = () => {
                       px: 2,
                       py: 0.75,
                       borderRadius: "8px",
-                      border:
-                        "1px solid rgba(255,255,255,.1)",
+                      border: "1px solid",
+                      borderColor: "divider",
                       fontSize: ".75rem",
-                      color: "rgba(255,255,255,.45)",
+                      color: "text.secondary",
                       whiteSpace: "nowrap",
                     }}
                   >
@@ -107,7 +117,7 @@ const Footer = () => {
                   fontSize: ".8rem",
                   textTransform: "uppercase",
                   letterSpacing: ".12em",
-                  color: "rgba(255,255,255,.35)",
+                  color: "text.disabled",
                 }}
               >
                 {heading}
@@ -116,12 +126,12 @@ const Footer = () => {
                 <Typography
                   key={item}
                   sx={{
-                    color: "rgba(255,255,255,.55)",
+                    color: "text.secondary",
                     mb: 1.5,
                     fontSize: ".9rem",
                     cursor: "default",
                     transition: "color .2s",
-                    "&:hover": { color: "#38BDF8" },
+                    "&:hover": { color: "primary.main" },
                   }}
                 >
                   {item}
@@ -139,7 +149,7 @@ const Footer = () => {
                 fontSize: ".8rem",
                 textTransform: "uppercase",
                 letterSpacing: ".12em",
-                color: "rgba(255,255,255,.35)",
+                color: "text.disabled",
               }}
             >
               {locale.footer.project.heading}
@@ -147,7 +157,7 @@ const Footer = () => {
 
             <Typography
               sx={{
-                color: "rgba(255,255,255,.7)",
+                color: "text.primary",
                 fontWeight: 600,
                 fontSize: ".95rem",
                 mb: 1,
@@ -158,7 +168,7 @@ const Footer = () => {
 
             <Typography
               sx={{
-                color: "rgba(255,255,255,.5)",
+                color: "text.secondary",
                 lineHeight: 1.8,
                 fontSize: ".9rem",
                 mb: 3,
@@ -171,13 +181,14 @@ const Footer = () => {
               sx={{
                 p: 3,
                 borderRadius: "16px",
-                background: "rgba(56,189,248,.06)",
-                border: "1px solid rgba(56,189,248,.14)",
+                bgcolor: "action.hover",
+                border: "1px solid",
+                borderColor: "divider",
               }}
             >
               <Typography
                 sx={{
-                  color: "#38BDF8",
+                  color: "primary.main",
                   fontWeight: 700,
                   fontSize: ".85rem",
                   mb: 1.5,
@@ -187,7 +198,7 @@ const Footer = () => {
               </Typography>
               <Typography
                 sx={{
-                  color: "rgba(255,255,255,.5)",
+                  color: "text.secondary",
                   fontSize: ".85rem",
                   lineHeight: 1.75,
                 }}
@@ -198,9 +209,7 @@ const Footer = () => {
           </Grid>
         </Grid>
 
-        <Divider
-          sx={{ my: { xs: 5, md: 6 }, borderColor: "rgba(255,255,255,.07)" }}
-        />
+        <Divider sx={{ my: { xs: 5, md: 6 }, borderColor: "divider" }} />
 
         <Box
           sx={{
@@ -213,7 +222,7 @@ const Footer = () => {
         >
           <Typography
             sx={{
-              color: "rgba(255,255,255,.3)",
+              color: "text.disabled",
               fontSize: ".82rem",
             }}
           >
@@ -226,12 +235,12 @@ const Footer = () => {
                 <Typography
                   key={item}
                   sx={{
-                    color: "rgba(255,255,255,.3)",
+                    color: "text.disabled",
                     fontSize: ".82rem",
                     cursor: "default",
                     transition: "color .2s",
                     "&:hover": {
-                      color: "rgba(255,255,255,.65)",
+                      color: "text.secondary",
                     },
                   }}
                 >
@@ -244,6 +253,8 @@ const Footer = () => {
       </Container>
     </Box>
   );
+
+  return dark ? footer : <MuiThemeProvider theme={darkTheme}>{footer}</MuiThemeProvider>;
 };
 
 export default Footer;
