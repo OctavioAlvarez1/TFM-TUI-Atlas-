@@ -1,0 +1,181 @@
+// ============================================================
+//  ATLAS — TUI Care Foundation Reto 3
+//  DAX Measures — Power BI
+//  Fuente de datos: etl/data/processed/
+// ============================================================
+
+
+// ── KPIs GLOBALES ─────────────────────────────────────────────────────────────
+
+Total POIs =
+COUNTROWS(pois)
+
+Total Destinos =
+DISTINCTCOUNT(destination_summary[destination])
+
+Destinos Saturados =
+COUNTROWS(
+    FILTER(destination_summary, destination_summary[avg_congestion] >= 80)
+)
+
+Destinos Infrautilizados =
+COUNTROWS(
+    FILTER(destination_summary, destination_summary[capacity_index] < 40)
+)
+
+Destinos en Crecimiento =
+COUNTROWS(
+    FILTER(destination_summary, destination_summary[status] = "En crecimiento")
+)
+
+
+// ── CONGESTIÓN ────────────────────────────────────────────────────────────────
+
+Indice Congestion Prom =
+AVERAGE(time_series[congestion_index])
+
+Congestion Maxima =
+MAX(time_series[congestion_index])
+
+Riesgo Saturacion % =
+DIVIDE(
+    COUNTROWS(FILTER(time_series, time_series[saturation_risk] = TRUE())),
+    COUNTROWS(time_series),
+    0
+) * 100
+
+
+// ── VISITANTES ────────────────────────────────────────────────────────────────
+
+Total Visitantes (anual) =
+CALCULATE(
+    SUM(time_series[visitors]),
+    time_series[year] = MAX(time_series[year])
+)
+
+Crecimiento YoY % =
+AVERAGE(time_series[visitors_yoy_pct])
+
+Visitantes Internacionales =
+CALCULATE(
+    SUM(time_series[intl_visitors_real]),
+    NOT(ISBLANK(time_series[intl_visitors_real]))
+)
+
+
+// ── OCUPACIÓN HOTELERA ────────────────────────────────────────────────────────
+
+Ocupacion Hotelera Prom % =
+AVERAGE(time_series[hotel_occupancy_pct])
+
+Ocupacion Pico % =
+MAX(time_series[hotel_occupancy_pct])
+
+Mes Pico Ocupacion =
+VAR PicoMes =
+    TOPN(1,
+        SUMMARIZE(time_series, time_series[month],
+            "avg_occ", AVERAGE(time_series[hotel_occupancy_pct])
+        ),
+        [avg_occ], DESC
+    )
+RETURN
+    MAXX(PicoMes, time_series[month])
+
+
+// ── GASTO TURÍSTICO ───────────────────────────────────────────────────────────
+
+Gasto Diario Prom EUR =
+AVERAGE(time_series[avg_daily_spend_eur])
+
+Gasto Total Estimado EUR =
+SUMX(
+    time_series,
+    time_series[visitors] * time_series[avg_daily_spend_eur] * 3
+)
+
+
+// ── SENTIMIENTO / RESEÑAS ──────────────────────────────────────────────────────
+
+Puntuacion Media =
+AVERAGE(reviews_aggregated[avg_score])
+
+Total Resenas =
+SUM(reviews_aggregated[review_count])
+
+% Resenas Positivas =
+AVERAGE(reviews_aggregated[pct_positive])
+
+% Resenas Negativas =
+AVERAGE(reviews_aggregated[pct_negative])
+
+
+// ── SOSTENIBILIDAD ESG ────────────────────────────────────────────────────────
+
+ESG Score Prom =
+AVERAGE(destination_summary[avg_esg])
+
+Carbon Score Prom =
+AVERAGE(destination_summary[carbon_score])
+
+Transporte Publico Score Prom =
+AVERAGE(destination_summary[public_transport_score])
+
+
+// ── CLIMA ─────────────────────────────────────────────────────────────────────
+
+Temperatura Media C =
+AVERAGE(time_series[avg_temp_c])
+
+Confort Climatico Prom =
+AVERAGE(time_series[climate_comfort])
+
+
+// ── OPORTUNIDADES DE INVERSIÓN ────────────────────────────────────────────────
+
+// Destinos con capacidad baja + sentimiento alto = oportunidad
+Score Oportunidad =
+VAR cap  = 100 - AVERAGE(destination_summary[capacity_index])    // inverted: low cap = opportunity
+VAR sent = AVERAGE(destination_summary[avg_sentiment]) / 5 * 100
+VAR esg  = AVERAGE(destination_summary[avg_esg])
+RETURN
+    ROUND((cap * 0.5 + sent * 0.3 + esg * 0.2), 1)
+
+// Alerta de saturación: congestión >= 75 en últimos 3 meses
+Alerta Saturacion =
+VAR UltimoMes = MAX(time_series[month])
+VAR Umbral = 75
+RETURN
+    IF(
+        CALCULATE(
+            AVERAGE(time_series[congestion_index]),
+            time_series[month] >= UltimoMes - 2
+        ) >= Umbral,
+        "ALERTA",
+        "OK"
+    )
+
+
+// ── MERCADOS EMISORES ─────────────────────────────────────────────────────────
+
+Top Mercado Emisor =
+TOPN(1, market_origin, market_origin[share_pct], DESC)
+
+Cuota Mercado Internacional % =
+CALCULATE(
+    SUM(market_origin[share_pct]),
+    market_origin[market_origin] <> "Spain (domestic)"
+)
+
+
+// ── VARIACIÓN TEMPORAL ────────────────────────────────────────────────────────
+
+// Para usar en gráfico de línea temporal con slicer de año/mes
+Visitantes Seleccion =
+SUM(time_series[visitors])
+
+Congestion Seleccion =
+AVERAGE(time_series[congestion_index])
+
+Ocupacion Seleccion =
+AVERAGE(time_series[hotel_occupancy_pct])
