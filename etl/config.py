@@ -121,7 +121,7 @@ OVERPASS_TIMEOUT = 60
 INE_BASE          = "https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA"
 INE_EOH_TABLE     = "49371"  # EOH — Viajeros hoteleros por provincia/CCAA
 INE_FRONTUR_TABLE = "23988"  # FRONTUR — Turistas internacionales por CCAA
-INE_EGATUR_TABLE  = "35104"  # EGATUR — Gasto turístico (nacional, para patrón estacional)
+INE_EGATUR_TABLE  = "35104"  # ETUR/EGATUR (tabla 35104 = demografía, Data[] vacía vía nult — patrón derivado de EOH)
 INE_MONTHS        = 24       # months of history to fetch
 
 # ── INE province names → Atlas destination(s) ────────────────────────────────

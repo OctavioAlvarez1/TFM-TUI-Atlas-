@@ -219,44 +219,49 @@ def fetch_frontur() -> pd.DataFrame:
 
 
 # ── EGATUR — National Seasonal Spending Pattern ───────────────────────────────
+# NOTE: INE table 35104 is actually ETUR (demographic breakdown), not EGATUR spending.
+# The real EGATUR spending table requires different parameters and has empty Data[] via nult=24.
+# We derive the seasonal spending pattern from EOH hotel arrivals instead (same signal).
 
 def fetch_egatur() -> pd.DataFrame:
     """
-    INE EGATUR Table 35104 — national average daily tourist spending.
-    Used as seasonal multiplier; per-destination baselines stay synthetic.
-    Series: "TOTAL, Total, Total"
+    Derives a national seasonal spending multiplier from EOH (hotel arrivals).
+
+    The original INE EGATUR table (35104) returns demographic breakdowns with
+    empty Data[] via the nult API — not tourist spending data.
+    EOH provides the same seasonal signal (arrivals peak = spending peak) and
+    is already fetched, so we use it as the baseline here.
+
+    Returns: (year, month, national_avg_spend_eur) — indexed from EOH arrivals.
     """
-    print("    Fetching INE EGATUR (national spending seasonal pattern)...")
-    time.sleep(SLEEP)
-    series_list = _fetch_table(INE_EGATUR_TABLE)
-    if not series_list:
+    print("    Deriving seasonal spending pattern from EOH (EGATUR table incompatible)...")
+    eoh_path = f"{RAW_DIR}/ine_eoh.csv"
+    try:
+        eoh = pd.read_csv(eoh_path)
+    except FileNotFoundError:
+        print("    [SKIP] EOH not yet saved — EGATUR pattern skipped")
         return pd.DataFrame()
 
-    # find national total series: "TOTAL, Total, Total"
-    national = next(
-        (s for s in series_list
-         if s.get("Nombre", "").strip() == "TOTAL, Total, Total"),
-        None
+    if eoh.empty or "hotel_arrivals_ine" not in eoh.columns:
+        return pd.DataFrame()
+
+    # national monthly mean arrivals → normalize to [100, 200] range as spending proxy
+    national = (
+        eoh.groupby(["year", "month"])["hotel_arrivals_ine"]
+        .mean()
+        .reset_index()
+        .rename(columns={"hotel_arrivals_ine": "arrivals_mean"})
     )
-    if not national:
-        # fallback: first series
-        national = series_list[0] if series_list else None
-    if not national:
-        return pd.DataFrame()
+    lo, hi = national["arrivals_mean"].min(), national["arrivals_mean"].max()
+    national["national_avg_spend_eur"] = (
+        100 + (national["arrivals_mean"] - lo) / (hi - lo + 1e-9) * 100
+    ).round(2)
+    national = national.drop(columns=["arrivals_mean"])
 
-    monthly = _series_to_monthly(national.get("Data", []))
-    if not monthly:
-        return pd.DataFrame()
-
-    rows = [
-        {"year": y, "month": m, "national_avg_spend_eur": round(v, 2)}
-        for (y, m), v in monthly.items()
-    ]
-    df = pd.DataFrame(rows)
     out = f"{RAW_DIR}/ine_egatur.csv"
-    df.to_csv(out, index=False, encoding="utf-8")
-    print(f"    ✓ EGATUR: {len(df)} rows (national seasonal pattern) → {out}")
-    return df
+    national.to_csv(out, index=False, encoding="utf-8")
+    print(f"    [OK] Seasonal pattern: {len(national)} rows (EOH-derived) -> {out}")
+    return national
 
 
 # ── Orchestrator ──────────────────────────────────────────────────────────────
